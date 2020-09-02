@@ -169,7 +169,7 @@
                         <div class="oss">
                             <div class="container">
                                 <div class="item">
-                                    <input type="radio" name="txtSexo" value="M">
+                                    <input type="radio" name="txtSexo" value="M" required>
                                 </div>
 
                                 <div class="item">

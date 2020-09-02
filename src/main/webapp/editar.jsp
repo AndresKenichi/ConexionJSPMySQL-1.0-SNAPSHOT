@@ -30,7 +30,7 @@
                 Connection cnx = null;
                 Statement sta = null;
                 ResultSet rs = null;
-                
+
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     cnx = DriverManager.getConnection("jdbc:mysql://localhost:3307/cursojsp?user=root&password=");
@@ -41,7 +41,7 @@
 
                     //llenamos las cajas de texto usando un while recorriendo la fila y mostrando los resultados el metodo next mueve el cursor
                     while (rs.next()) {
-                        
+
 
             %>
             <table border="1" width="100%" align="center">
@@ -62,8 +62,19 @@
                     <td class="guarda">
                         <div class="oss">
                             <div class="container">
+                                <%
+                                    String opcion = rs.getString(4);
+
+                                    if (opcion.equals("F")) {
+
+                                    }
+                                %>
+
+
                                 <div class="item">
-                                    <input type="radio" name="txtSexo" value="<%=rs.getString(1)%>" >
+                                    <input type="radio" name="txtSexo" value="M" <%if (opcion.equals("M")) {
+                                            out.print("checked");
+                                        } %> required>
                                 </div>
 
                                 <div class="item">
@@ -72,12 +83,16 @@
 
 
                                 <div class="itemM">
-                                    <input type="radio" name="txtSexo" value="F">
+                                    <input type="radio" name="txtSexo" value="F" <%if (opcion.equals("F")) {
+                                            out.print("checked");
+                                        }%> >
                                 </div>
 
                                 <div class="itemM">
                                     <label>Femenino</label>
                                 </div>
+
+
 
                             </div>
                         </div>
@@ -97,15 +112,33 @@
             </table>
         </form>
         <%
-                        
-                    }
-                    
-                } catch (Exception e) {
-                    out.print("Error: " + e);
+
                 }
+
+            } catch (Exception e) {
+                out.print("Error: " + e);
+            }
+              //Si el valor obtenido es diferente de nulo asignamos los valores a las variables
+            if (request.getParameter("btnGrabar") != null) {
+                String cod = request.getParameter("txtCod");
+                String nom = request.getParameter("txtNom");
+                int edad = Integer.parseInt(request.getParameter("txtEdad"));
+                String sexo = request.getParameter("txtSexo");
+                String pass = request.getParameter("txtPas");
+
+                //ExecuteUpdate para insert, delete, update
                 
-            
-            
+                 sta.executeUpdate("update usuarios set nomUsu='"+nom+"', edadUsu="+edad+", SexoUsu='"+sexo+"', PassUsu='"+pass+"' where CodUsu='"+cod+"'");
+                  
+                 request.getRequestDispatcher("Listado.jsp").forward(request, response);
+
+
+
+
+           
+
+            }
+
 
         %>
 

@@ -1,0 +1,230 @@
+body{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-image: url(../fondoweb.jpg);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    
+
+}
+h1 {
+text-align: center;
+color: #fff;
+}
+
+table{
+    border: 2px solid;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+
+}
+
+table tr{
+    border: 1px solid;
+    padding: 5px;
+     
+}
+
+
+/* table tr:nth-child(even){
+    background-color: #ff6600;
+    color: black;
+} */
+
+
+
+
+table td, table th{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid;
+    
+}
+
+table th{
+    text-transform: uppercase;
+    font-family: 17px;
+    letter-spacing: 1px;
+}
+
+table td{
+    text-transform: uppercase;
+    font-family: 17px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* .................................. */
+
+
+
+
+
+
+/* .................................. */
+
+
+h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+    
+    
+    
+}
+
+input {
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+   
+    
+}
+
+input radio{
+    
+}
+
+
+
+div {text-align: center;}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ form{
+    width: 550px;
+    margin: auto;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    
+}
+
+.container{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    
+}
+
+.guarda{
+    overflow: hidden;
+    
+}
+
+.oss{
+    display: flex;
+    justify-content: center;
+}
+
+.item{
+   display: inline-block;
+   margin: 3px;
+   padding: 1px;
+   float: left;
+    
+}
+
+.containerM{
+      display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.itemM{
+   display: inline-block;
+   margin: 3px;
+   padding: 1px;
+   float: left;
+    
+}
+
+
+
+
+
+#boton{
+    background: #ff6600;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+}
+
+#boton:hover{
+    cursor: pointer;
+    
+}
+
+@media screen and (max-width:480px){
+    form{
+        border: 0;
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+    
+    table{
+        border: 0;
+        margin: auto;
+        
+    }
+    
+    table tr{
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+        
+    }
+    
+     table th{
+        display: block;
+        text-align: right;
+        font-size: 16px;
+        border-bottom: 2px dotted #ccc;
+    }
+    
+     table td{
+        display: block;
+        
+        font-size: 16px;
+        border-bottom: 2px dotted #ccc;
+    }
+    
+   table th ,table td:last-child{
+        border-bottom: 0;
+    }
+    
+    table td:before{
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: 600;
+          
+    }
+    
+      table th:before{
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: 600;
+          
+    }
+    
+    table thead{
+        display: none;
+    }
+    
+    
+}

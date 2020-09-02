@@ -63,12 +63,10 @@
                 <th data-label="Pass"><%= rs.getString(5)%></th> 
                 <th>
                     <a href="editar.jsp?cod=<%= rs.getString(1)%>">
-                    <img src="Iconos/editar.png" width="50" height="50">
-                    </a>
+                    <img src="Iconos/editar.png" width="50" height="50"></a>
                     ||
                     <a href="eliminar.jsp?cod=<%= rs.getString(1)%>">
-                    <img src="Iconos/eliminar.png" width="50" height="50">
-                    </a>
+                    <img src="Iconos/eliminar.png" width="50" height="50"></a>
                     
                     
                 </th>
